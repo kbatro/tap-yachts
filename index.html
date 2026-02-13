@@ -164,6 +164,43 @@
 
   .hero__sub span { margin: 0 10px; opacity: 0.4; }
 
+  .hero__download {
+    position: absolute;
+    bottom: 80px;
+    right: 40px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    padding: 12px 24px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 2px;
+    transition: all 0.3s;
+    backdrop-filter: blur(4px);
+    background: rgba(14,30,48,0.3);
+  }
+
+  .hero__download:hover {
+    color: white;
+    border-color: var(--gold);
+    background: rgba(14,30,48,0.5);
+  }
+
+  .hero__download svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+  }
+
   /* ── INTRO SECTION ── */
   .intro {
     padding: 100px 0;
@@ -607,6 +644,10 @@
       Yacht Purchase<span>|</span>New-Build<span>|</span>Refit<span>|</span>Divestiture
     </div>
   </div>
+  <a href="tapestry-v3.pdf" download class="hero__download">
+    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download Brochure
+  </a>
 </section>
 
 <!-- ── ABOUT ── -->

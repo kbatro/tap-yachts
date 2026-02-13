@@ -1,5 +1,5 @@
 node_modules/
-*.pdf
+_page_*.pdf
 _page_*.jpg
 _page_*.png
 package-lock.json
