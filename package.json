@@ -1,15 +1,16 @@
 {
-  "name": "tapestry",
+  "name": "tap-yachts",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx serve .",
+    "build": "echo 'Static site — no build needed'",
+    "start": "npx serve ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "puppeteer": "^24.37.3"
+  "description": "Tapestry Associates — Yacht Owner Representation",
+  "devDependencies": {
+    "serve": "^14.2.0"
   }
 }
