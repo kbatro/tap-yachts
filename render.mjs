@@ -45,7 +45,7 @@ async function render() {
 
   // Combine page images into a single PDF using ImageMagick
   // Each page is a single flat image — no compositing, loads instantly
-  const outputPdf = path.join(__dirname, 'tapestry-v3.pdf');
+  const outputPdf = path.join(__dirname, 'Tapestry-Yacht-Owner-Representation.pdf');
   const imgArgs = pageImages.map(p => `"${p}"`).join(' ');
   execSync(
     `magick ${imgArgs} -density 288 -units PixelsPerInch "${outputPdf}"`,
@@ -56,7 +56,7 @@ async function render() {
   pageImages.forEach(p => fs.unlinkSync(p));
 
   const sizeMB = (fs.statSync(outputPdf).size / 1024 / 1024).toFixed(1);
-  console.log(`PDF generated: tapestry-v3.pdf (${sizeMB}MB)`);
+  console.log(`PDF generated: Tapestry-Yacht-Owner-Representation.pdf (${sizeMB}MB)`);
 }
 
 render().catch(console.error);
