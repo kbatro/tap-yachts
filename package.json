@@ -2,9 +2,9 @@
   "name": "tap-yachts",
   "version": "1.0.0",
   "scripts": {
-    "dev": "npx serve .",
+    "dev": "npx serve public",
     "build": "echo 'Static site — no build needed'",
-    "start": "npx serve ."
+    "start": "npx serve public"
   },
   "keywords": [],
   "author": "",
