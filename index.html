@@ -100,38 +100,81 @@
     );
   }
 
-  .hero__logo {
-    position: absolute;
-    top: 36px;
-    left: 40px;
-    height: 28px;
+  /* ── STICKY NAV ── */
+  .site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 60px;
+    background: rgba(14,30,48,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: background 0.3s;
+  }
+
+  .site-nav__logo {
+    height: 22px;
     opacity: 0.9;
     filter: invert(1);
     mix-blend-mode: screen;
-    z-index: 2;
   }
 
-  .hero__nav {
-    position: absolute;
-    top: 36px;
-    right: 40px;
-    z-index: 2;
+  .site-nav__links {
     display: flex;
     gap: 32px;
+    align-items: center;
   }
 
-  .hero__nav a {
+  .site-nav__links a {
     font-family: var(--sans);
     font-weight: 300;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.55);
     text-decoration: none;
     transition: color 0.3s;
   }
 
-  .hero__nav a:hover { color: white; }
+  .site-nav__links a:hover { color: white; }
+
+  .site-nav__cta {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold-light) !important;
+    text-decoration: none;
+    padding: 7px 16px;
+    border: 1px solid rgba(200,152,90,0.35);
+    border-radius: 2px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .site-nav__cta:hover {
+    border-color: var(--gold);
+    color: white !important;
+    background: rgba(200,152,90,0.1);
+  }
+
+  .site-nav__cta svg {
+    width: 12px;
+    height: 12px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+  }
 
   .hero__content {
     position: absolute;
@@ -164,42 +207,6 @@
 
   .hero__sub span { margin: 0 10px; opacity: 0.4; }
 
-  .hero__download {
-    position: absolute;
-    bottom: 80px;
-    right: 40px;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--sans);
-    font-weight: 400;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    text-decoration: none;
-    padding: 12px 24px;
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 2px;
-    transition: all 0.3s;
-    backdrop-filter: blur(4px);
-    background: rgba(14,30,48,0.3);
-  }
-
-  .hero__download:hover {
-    color: white;
-    border-color: var(--gold);
-    background: rgba(14,30,48,0.5);
-  }
-
-  .hero__download svg {
-    width: 14px;
-    height: 14px;
-    stroke: currentColor;
-    fill: none;
-    stroke-width: 2;
-  }
 
   /* ── INTRO SECTION ── */
   .intro {
@@ -597,12 +604,54 @@
   /* ── FOOTER ── */
   .footer {
     background: var(--navy);
-    padding: 24px 40px;
-    text-align: center;
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: rgba(255,255,255,0.25);
+    padding: 48px 40px 32px;
     border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .footer__logo {
+    height: 20px;
+    opacity: 0.5;
+    filter: invert(1);
+    mix-blend-mode: screen;
+  }
+
+  .footer__links {
+    display: flex;
+    gap: 28px;
+  }
+
+  .footer__links a {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer__links a:hover { color: rgba(255,255,255,0.7); }
+
+  .footer__copy {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.2);
+    text-align: center;
+    margin-top: 32px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* ── RESPONSIVE: TABLET ── */
@@ -632,7 +681,8 @@
     .bio__photo { width: 60px; height: 60px; }
     .bio__name { font-size: 20px; }
 
-    .hero__nav { display: none; }
+    .site-nav__links a:not(.site-nav__cta) { display: none; }
+    .site-nav { padding: 0 28px; }
 
     /* Projects map doesn't work well on tablet — switch to list */
     .projects__graphic { display: none; }
@@ -647,21 +697,17 @@
 
     /* Hero */
     .hero { min-height: 100svh; }
-    .hero__logo { top: 24px; left: 24px; height: 22px; }
+    .site-nav { padding: 0 20px; height: 52px; }
+    .site-nav__logo { height: 18px; }
+    .site-nav__links { gap: 0; }
+    .site-nav__cta { font-size: 9px; padding: 6px 12px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+    .footer__links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .footer { padding: 36px 20px 24px; }
     .hero__content { padding: 0 24px 60px; }
     .hero__title { letter-spacing: 6px; }
     .hero__sub { font-size: 10px; letter-spacing: 2.5px; }
     .hero__sub span { margin: 0 6px; }
-    .hero__download {
-      bottom: auto;
-      top: 24px;
-      right: 24px;
-      padding: 10px 16px;
-      font-size: 9px;
-      letter-spacing: 1.5px;
-    }
-    .hero__download svg { width: 12px; height: 12px; }
-
     /* Intro */
     .intro { padding: 56px 0; }
     .intro__text .body-text { font-size: 14px; line-height: 1.75; }
@@ -753,29 +799,33 @@
 </head>
 <body>
 
-<!-- ── HERO ── -->
-<section class="hero" id="home">
-  <div class="hero__bg">
-    <img src="images/hero-aerial.jpg" alt="Superyacht aerial">
-  </div>
-  <a href="https://www.tallc.com" target="_blank"><img src="images/logo.jpg" alt="Tapestry Associates" class="hero__logo"></a>
-  <nav class="hero__nav">
+<!-- ── STICKY NAV ── -->
+<nav class="site-nav">
+  <a href="https://www.tallc.com" target="_blank"><img src="images/logo.jpg" alt="Tapestry Associates" class="site-nav__logo"></a>
+  <div class="site-nav__links">
     <a href="#about">About</a>
     <a href="#framework">Framework</a>
     <a href="#leadership">Leadership</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
-  </nav>
+    <a href="Tapestry-Yacht-Owner-Representation.pdf" download class="site-nav__cta">
+      <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Brochure
+    </a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="home">
+  <div class="hero__bg">
+    <img src="images/hero-aerial.jpg" alt="Superyacht aerial">
+  </div>
   <div class="hero__content">
     <div class="hero__title">Owner<br>Representation</div>
     <div class="hero__sub">
       Yacht Purchase<span>|</span>New-Build<span>|</span>Refit<span>|</span>Divestiture
     </div>
   </div>
-  <a href="Tapestry-Yacht-Owner-Representation.pdf" download class="hero__download">
-    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-    Download Brochure
-  </a>
 </section>
 
 <!-- ── ABOUT ── -->
@@ -1023,7 +1073,19 @@
   </div>
 </section>
 
-<footer class="footer">Proprietary &amp; Confidential &copy; Tapestry 2026</footer>
+<footer class="footer">
+  <div class="footer__inner">
+    <img src="images/logo.jpg" alt="Tapestry" class="footer__logo">
+    <div class="footer__links">
+      <a href="#services">Services</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="mailto:yachts@tallc.com">yachts@tallc.com</a>
+    </div>
+  </div>
+  <p class="footer__copy">Proprietary &amp; Confidential &copy; Tapestry Associates 2026</p>
+</footer>
 
 </body>
 </html>
