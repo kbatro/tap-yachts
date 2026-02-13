@@ -605,21 +605,149 @@
     border-top: 1px solid rgba(255,255,255,0.06);
   }
 
-  /* ── RESPONSIVE ── */
+  /* ── RESPONSIVE: TABLET ── */
   @media (max-width: 900px) {
+    .wrap { padding: 0 28px; }
+
     .intro__grid,
     .leadership__grid {
       grid-template-columns: 1fr;
     }
-    .intro__image { max-height: 400px; }
-    .leadership__image { max-height: 350px; aspect-ratio: 16/9; }
-    .framework__pillars { grid-template-columns: 1fr; gap: 32px; }
-    .bio-card { grid-template-columns: 60px 1fr; gap: 14px; }
+
+    .intro { padding: 72px 0; }
+    .intro__image {
+      max-height: 400px;
+      aspect-ratio: 16/10;
+      border-radius: 4px;
+    }
+
+    .framework { padding: 72px 0; }
+    .framework__pillars { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .framework__image { aspect-ratio: 16/9; }
+
+    .leadership { padding: 72px 0; }
+    .leadership__image { max-height: 350px; aspect-ratio: 16/9; border-radius: 4px; margin-bottom: 12px; }
+
+    .bio-card { grid-template-columns: 60px 1fr; gap: 14px; padding: 20px 22px; }
     .bio__photo { width: 60px; height: 60px; }
+    .bio__name { font-size: 20px; }
+
     .hero__nav { display: none; }
-    .projects__graphic { aspect-ratio: 3/2; }
+
+    /* Projects map doesn't work well on tablet — switch to list */
+    .projects__graphic { display: none; }
+    .projects__regions-mobile { display: grid; }
+
+    .scale__bar { height: 48px; }
+  }
+
+  /* ── RESPONSIVE: MOBILE ── */
+  @media (max-width: 600px) {
+    .wrap { padding: 0 20px; }
+
+    /* Hero */
+    .hero { min-height: 100svh; }
+    .hero__logo { top: 24px; left: 24px; height: 22px; }
+    .hero__content { padding: 0 24px 60px; }
+    .hero__title { letter-spacing: 6px; }
+    .hero__sub { font-size: 10px; letter-spacing: 2.5px; }
+    .hero__sub span { margin: 0 6px; }
+    .hero__download {
+      bottom: auto;
+      top: 24px;
+      right: 24px;
+      padding: 10px 16px;
+      font-size: 9px;
+      letter-spacing: 1.5px;
+    }
+    .hero__download svg { width: 12px; height: 12px; }
+
+    /* Intro */
+    .intro { padding: 56px 0; }
+    .intro__text .body-text { font-size: 14px; line-height: 1.75; }
+    .intro__text .section-title--sub { margin-top: 32px; }
+    .intro__image { max-height: 300px; aspect-ratio: 4/3; }
+
+    .section-label { font-size: 9px; letter-spacing: 4px; margin-bottom: 14px; }
+    .gold-rule { margin-bottom: 20px; }
+
+    /* Framework */
+    .framework { padding: 56px 0; }
+    .framework__pillars { grid-template-columns: 1fr; gap: 28px; }
+    .framework__image { aspect-ratio: 4/3; margin: 28px 0 40px; }
+    .pillar__label { font-size: 10px; }
+    .pillar__text { font-size: 13px; }
+
+    /* Leadership */
+    .leadership { padding: 56px 0; }
+    .leadership__image { max-height: 260px; aspect-ratio: 16/9; }
+    .leadership__cards { gap: 14px; }
+    .bio-card {
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    .bio__photo {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 14px;
+    }
+    .bio__name { font-size: 20px; }
+    .bio__role { margin-bottom: 10px; }
+    .bio__text { font-size: 12px; text-align: left; }
+
+    /* Projects */
+    .projects { padding: 56px 0 60px; }
+    .projects__desc { font-size: 14px; margin-bottom: 32px; }
+    .projects__graphic { display: none; }
+    .projects__regions-mobile { display: grid; }
+
     .scale__bar { flex-direction: column; height: auto; }
-    .scale__segment { padding: 14px 20px; justify-content: flex-start; }
+    .scale__segment {
+      padding: 16px 20px;
+      justify-content: flex-start;
+      gap: 12px;
+    }
+    .scale__size { font-size: 18px; }
+    .scale__detail { font-size: 12px; }
+
+    /* Close */
+    .close { min-height: 70vh; }
+    .close__content { padding: 60px 24px; }
+    .close__heading { font-size: 36px; }
+    .close__text { font-size: 14px; }
+    .close__email { font-size: 18px; }
+    .close__subtext { font-size: 12px; }
+    .close__logo { height: 28px; }
+  }
+
+  /* ── MOBILE PROJECTS FALLBACK ── */
+  .projects__regions-mobile {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 24px;
+    margin-bottom: 36px;
+  }
+
+  .region-mobile__name {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--gold);
+  }
+
+  .region-mobile__yard {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--text-dark);
   }
 </style>
 </head>
@@ -816,6 +944,49 @@
         <div class="yard-cluster__name">South Pacific</div>
         <div class="yard-cluster__yard">Orams Marine</div>
         <div class="yard-cluster__yard">Silver Yachts</div>
+      </div>
+    </div>
+
+    <div class="projects__regions-mobile">
+      <div>
+        <div class="region-mobile__name">Netherlands</div>
+        <div class="region-mobile__yard">Amels</div>
+        <div class="region-mobile__yard">Damen</div>
+        <div class="region-mobile__yard">Feadship</div>
+        <div class="region-mobile__yard">Heesen</div>
+        <div class="region-mobile__yard">Icon</div>
+        <div class="region-mobile__yard">Oceanco</div>
+        <div class="region-mobile__yard">Vitters</div>
+      </div>
+      <div>
+        <div class="region-mobile__name">Germany &amp; Scandinavia</div>
+        <div class="region-mobile__yard">L&uuml;rssen</div>
+        <div class="region-mobile__yard">Nautor's Swan</div>
+        <div class="region-mobile__yard">Baltic Yachts</div>
+      </div>
+      <div>
+        <div class="region-mobile__name">Mediterranean</div>
+        <div class="region-mobile__yard">Benetti</div>
+        <div class="region-mobile__yard">Rossinavi</div>
+        <div class="region-mobile__yard">MB92</div>
+        <div class="region-mobile__yard">Freire Shipyard</div>
+      </div>
+      <div>
+        <div class="region-mobile__name">United States</div>
+        <div class="region-mobile__yard">Westport</div>
+        <div class="region-mobile__yard">Delta</div>
+        <div class="region-mobile__yard">Safe Harbor</div>
+        <div class="region-mobile__yard">Berth One Palm Beach</div>
+      </div>
+      <div>
+        <div class="region-mobile__name">Asia</div>
+        <div class="region-mobile__yard">Marsun</div>
+        <div class="region-mobile__yard">Horizon</div>
+      </div>
+      <div>
+        <div class="region-mobile__name">South Pacific</div>
+        <div class="region-mobile__yard">Orams Marine</div>
+        <div class="region-mobile__yard">Silver Yachts</div>
       </div>
     </div>
 
