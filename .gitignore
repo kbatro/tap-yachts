@@ -1,0 +1,9 @@
+node_modules/
+*.pdf
+_page_*.jpg
+_page_*.png
+package-lock.json
+.DS_Store
+anne.jpeg
+kevin_johnson.jpeg
+kevin_oconer.jpeg

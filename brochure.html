@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tapestry Associates — Yacht Owner Representation</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500;600&display=swap');
+
+  :root {
+    --navy: #0E1E30;
+    --navy-mid: #1B3A5C;
+    --navy-light: #2A4F7A;
+    --orange: #D4752E;
+    --gold: #C8985A;
+    --gold-light: #D4AD6A;
+    --warm-gray: #7A7D80;
+    --light-gray: #F7F6F4;
+    --off-white: #FAFAF8;
+    --text-dark: #2C2C2C;
+    --text-mid: #5A5A5A;
+    --serif: 'Cormorant Garamond', 'Didot', Georgia, serif;
+    --sans: 'Inter', 'Avenir Next', -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: 11in 8.5in;
+    margin: 0;
+  }
+
+  body {
+    font-family: var(--sans);
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page {
+    width: 11in;
+    height: 8.5in;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .page:last-child {
+    page-break-after: auto;
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     PAGE 1: COVER
+     ═══════════════════════════════════════════════════════ */
+  .cover {
+    background: var(--navy);
+    position: relative;
+  }
+
+  .cover__hero {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .cover__hero > img:first-child {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 15%;
+    display: block;
+    filter: brightness(0.85) contrast(1.1);
+  }
+
+  .cover__hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(14,30,48,0.35) 0%,
+      rgba(14,30,48,0.30) 40%,
+      rgba(14,30,48,0.55) 65%,
+      rgba(14,30,48,0.95) 100%
+    );
+  }
+
+  .cover__logo {
+    position: absolute;
+    top: 40px;
+    left: 56px;
+    z-index: 2;
+    height: 28px;
+    opacity: 0.9;
+    filter: invert(1);
+    mix-blend-mode: screen;
+  }
+
+  .cover__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 56px 48px;
+    z-index: 2;
+  }
+
+  .cover__title {
+    font-family: var(--sans);
+    font-weight: 200;
+    font-size: 52px;
+    letter-spacing: 12px;
+    color: white;
+    text-transform: uppercase;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+
+  .cover__subtitle {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+  }
+
+  .cover__subtitle span {
+    margin: 0 10px;
+    opacity: 0.4;
+  }
+
+  .cover__foot {
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 7px;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.25);
+    z-index: 2;
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     PAGE 2: CLARITY BEFORE COMMITMENT
+     ═══════════════════════════════════════════════════════ */
+  .intro {
+    display: grid;
+    grid-template-columns: 52% 48%;
+    background: var(--off-white);
+  }
+
+  .intro__text {
+    padding: 56px 52px 48px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .intro__text::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10%;
+    bottom: 10%;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, var(--gold-light), transparent);
+  }
+
+  .intro__image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .intro__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .intro__image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(14,30,48,0.08) 0%, transparent 30%);
+  }
+
+  .section-label {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 28px;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 20px;
+  }
+
+  .gold-rule {
+    width: 64px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .body-text {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 10.5px;
+    line-height: 1.72;
+    color: var(--text-dark);
+    margin-bottom: 14px;
+  }
+
+  .body-text:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-title--sub {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 1.25;
+    color: var(--navy);
+    margin-top: 28px;
+    margin-bottom: 16px;
+  }
+
+  .icon-corner {
+    position: absolute;
+    width: 26px;
+    opacity: 0.55;
+  }
+
+  .icon-corner--tl { top: 40px; left: 56px; }
+  .icon-corner--tr { top: 40px; right: 40px; }
+
+  sup.sm { font-size: 7px; vertical-align: super; }
+
+  .page-foot {
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 7px;
+    letter-spacing: 1px;
+    color: var(--warm-gray);
+  }
+
+  .page-foot--light {
+    color: rgba(255,255,255,0.25);
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     PAGE 3: ADVISORY FRAMEWORK
+     ═══════════════════════════════════════════════════════ */
+  .framework {
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .framework__header {
+    padding: 44px 56px 28px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .framework__header .section-label {
+    color: rgba(255,255,255,0.4);
+  }
+
+  .framework__header .section-title {
+    color: white;
+    font-size: 38px;
+    margin-bottom: 10px;
+  }
+
+  .framework__image {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+  }
+
+  .framework__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 45%;
+    display: block;
+  }
+
+  .framework__image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, var(--navy) 0%, transparent 15%, transparent 85%, var(--navy) 100%);
+    z-index: 1;
+  }
+
+  .framework__pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    padding: 28px 56px 48px;
+  }
+
+  .pillar__label {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 8.5px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 12px;
+  }
+
+  .pillar__text {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.78);
+  }
+
+  .framework__icon {
+    position: absolute;
+    top: 40px;
+    right: 48px;
+    width: 26px;
+    opacity: 0.35;
+    filter: invert(1);
+    mix-blend-mode: screen;
+    z-index: 3;
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     PAGE 4: LEADERSHIP
+     Image left, three elevated bio cards right
+     ═══════════════════════════════════════════════════════ */
+  .leadership {
+    display: grid;
+    grid-template-columns: 38% 62%;
+    background: var(--off-white);
+  }
+
+  .leadership__image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .leadership__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    display: block;
+  }
+
+  .leadership__image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 60%,
+      rgba(250,250,248,0.08) 85%,
+      rgba(250,250,248,0.35) 100%
+    );
+  }
+
+
+  .leadership__right {
+    display: flex;
+    flex-direction: column;
+    padding: 36px 40px 44px 36px;
+    justify-content: center;
+  }
+
+  .leadership__right-header {
+    margin-bottom: 18px;
+  }
+
+  .leadership__right-header .section-label {
+    color: var(--warm-gray);
+    margin-bottom: 8px;
+  }
+
+  .leadership__right-header .section-title {
+    color: var(--navy);
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
+  .leadership__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .bio-card {
+    padding: 18px 22px;
+    background: white;
+    border-left: 2px solid var(--gold);
+    box-shadow: 0 1px 4px rgba(14,30,48,0.06);
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .bio__photo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(200,152,90,0.25);
+    margin-top: 2px;
+  }
+
+  .bio-card__body {
+    min-width: 0;
+  }
+
+  .bio-card__header {
+    margin-bottom: 8px;
+  }
+
+  .bio__name {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--navy);
+    letter-spacing: 0.5px;
+    line-height: 1;
+  }
+
+  .bio__role {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 7.5px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 5px;
+  }
+
+  .bio__text {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 8.5px;
+    line-height: 1.72;
+    color: var(--text-mid);
+  }
+
+  .bio__text em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     PAGE 5: OUR PROJECTS
+     Geographic map layout with positioned shipyard clusters
+     ═══════════════════════════════════════════════════════ */
+  .projects {
+    background: var(--off-white);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .projects__header {
+    padding: 44px 56px 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .projects__header .section-label {
+    color: var(--warm-gray);
+  }
+
+  .projects__header .section-title {
+    color: var(--navy);
+    font-size: 38px;
+    margin-bottom: 10px;
+  }
+
+  .projects__desc {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 10.5px;
+    line-height: 1.7;
+    color: var(--text-mid);
+    max-width: 620px;
+  }
+
+  .projects__icon {
+    position: absolute;
+    top: 40px;
+    right: 48px;
+    width: 26px;
+    opacity: 0.55;
+    z-index: 2;
+  }
+
+  .projects__graphic {
+    flex: 1;
+    position: relative;
+    margin: 0 40px;
+  }
+
+  .projects__map-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 92%;
+    height: 85%;
+    background: url('images/world-map.jpg') center center / contain no-repeat;
+    opacity: 0.2;
+  }
+
+  .projects__arc {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .yard-cluster {
+    position: absolute;
+    z-index: 3;
+  }
+
+  .yard-cluster__name {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 7px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 5px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--gold);
+    white-space: nowrap;
+  }
+
+  .yard-cluster__yard {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 1.7;
+    color: var(--text-dark);
+    white-space: nowrap;
+  }
+
+  .yard-dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    z-index: 4;
+  }
+
+  .projects__scale {
+    padding: 0 56px 48px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .scale__bar {
+    display: flex;
+    align-items: stretch;
+    height: 44px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .scale__segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 20px;
+  }
+
+  .scale__segment--sm {
+    background: rgba(14,30,48,0.06);
+    flex: 3;
+  }
+
+  .scale__segment--md {
+    background: rgba(14,30,48,0.12);
+    flex: 2;
+  }
+
+  .scale__segment--lg {
+    background: var(--navy);
+    flex: 3;
+  }
+
+  .scale__size {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+
+  .scale__segment--sm .scale__size,
+  .scale__segment--md .scale__size {
+    color: var(--navy);
+  }
+
+  .scale__segment--lg .scale__size {
+    color: var(--gold);
+  }
+
+  .scale__detail {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 9px;
+    line-height: 1.3;
+  }
+
+  .scale__segment--sm .scale__detail,
+  .scale__segment--md .scale__detail {
+    color: var(--text-mid);
+  }
+
+  .scale__segment--lg .scale__detail {
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     PAGE 6: NEXT STEPS / CLOSE
+     Full-bleed image with floating content overlay
+     ═══════════════════════════════════════════════════════ */
+  .close {
+    position: relative;
+    background: var(--navy);
+  }
+
+  .close__image {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .close__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+    filter: brightness(0.8) contrast(1.05);
+  }
+
+  .close__image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(14,30,48,0.25) 0%,
+      rgba(14,30,48,0.35) 30%,
+      rgba(14,30,48,0.6) 55%,
+      rgba(14,30,48,0.92) 100%
+    );
+  }
+
+  .close__content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 80px;
+    z-index: 2;
+  }
+
+  .close__label {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 14px;
+  }
+
+  .close__heading {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 42px;
+    color: white;
+    margin-bottom: 18px;
+  }
+
+  .close__rule {
+    width: 80px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .close__text {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 10px;
+  }
+
+  .close__email {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--gold-light);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+    display: inline-block;
+  }
+
+  .close__subtext {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 36px;
+  }
+
+  .close__logo {
+    height: 36px;
+    opacity: 0.8;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE 1: COVER
+     ═══════════════════════════════════════════════════════ -->
+<div class="page cover">
+  <div class="cover__hero">
+    <img src="images/hero-aerial.jpg" alt="Superyacht aerial">
+  </div>
+  <img src="images/logo.jpg" alt="Tapestry Associates" class="cover__logo">
+  <div class="cover__bottom">
+      <div class="cover__title">Owner<br>Representation</div>
+      <div class="cover__subtitle">
+        Yacht Purchase<span>|</span>New-Build<span>|</span>Refit<span>|</span>Divestiture
+      </div>
+    </div>
+  <div class="cover__foot">Proprietary & Confidential &copy; Tapestry 2026</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE 2: CLARITY BEFORE COMMITMENT
+     ═══════════════════════════════════════════════════════ -->
+<div class="page intro">
+  <div class="intro__text">
+    <img src="images/icon.jpg" alt="" class="icon-corner icon-corner--tl">
+    <div style="padding-top: 20px;">
+      <div class="section-label">Yacht Owner Representation</div>
+      <div class="section-title">Clarity Before<br>Commitment</div>
+      <div class="gold-rule"></div>
+      <p class="body-text">Since 2010, Tapestry has served Owners of significant wealth in the creation and oversight of some of the world's most complex tangible assets&mdash;on land and at sea.</p>
+      <p class="body-text">We operate outside of transactional incentives. As independent advocates for the Owner, we test assumptions, surface risks, and articulate trade-offs&mdash;so decisions are informed, not pressured.</p>
+      <p class="body-text">We provide a confidential, judgment-free environment where Owners explore every dimension of a complex asset: culture, lifestyle, operations, finance, tax, insurance, and liability.</p>
+
+      <div class="section-title--sub">Pivotal Work at<br>Moments of Transition</div>
+      <div class="gold-rule"></div>
+      <p class="body-text">Before acquisition, during changes in scale, or when reshaping a program, we clarify the Owner's objectives early&mdash;preventing misalignment and ensuring they are fully informed before committing capital.</p>
+      <p class="body-text">This positions our representation to protect capital, time, and attention&mdash;so the Owner remains focused on realizing their invested Enjoyment Capital<sup class="sm">&copy;</sup> over the life of the asset.</p>
+    </div>
+    <div class="page-foot">Proprietary & Confidential &copy; Tapestry 2026</div>
+  </div>
+  <div class="intro__image">
+    <img src="images/marina.jpg" alt="Superyacht marina">
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE 3: ADVISORY FRAMEWORK
+     ═══════════════════════════════════════════════════════ -->
+<div class="page framework">
+  <img src="images/icon.jpg" alt="" class="framework__icon">
+  <div class="framework__header">
+    <div class="section-label">Advisory Framework</div>
+    <div class="section-title">New Builds & Refits</div>
+    <div class="gold-rule"></div>
+  </div>
+  <div class="framework__image">
+    <img src="images/shipyard.jpg" alt="Shipyard">
+  </div>
+  <div class="framework__pillars">
+    <div class="pillar">
+      <div class="pillar__label">Preventing Risk Accumulation</div>
+      <p class="pillar__text">We identify inflection points where programs fail at the margins. Misalignments, late decisions, and fragmented oversight are addressed long before they become irreversible.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar__label">Advocacy, Free from Bias</div>
+      <p class="pillar__text">Our only incentive is to get it right. Working alongside brokers and shipyards, we build a deep understanding of the Owner&mdash;their family, lifestyle, and broader asset portfolio&mdash;to inform every decision.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar__label">Informed Project Sequencing</div>
+      <p class="pillar__text">Our Seven-Phased Project Method builds sequentially, testing assumptions at each stage. This balance of flexibility and structure creates the conditions for a successful outcome.</p>
+    </div>
+  </div>
+  <div class="page-foot page-foot--light">Proprietary & Confidential &copy; Tapestry 2026</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE 4: LEADERSHIP
+     ═══════════════════════════════════════════════════════ -->
+<div class="page leadership">
+  <div class="leadership__image">
+    <img src="images/leadership.jpg" alt="Yacht detail">
+    <img src="images/icon.jpg" alt="" style="position:absolute; bottom:20px; left:24px; width:22px; opacity:0.5; filter:invert(1); mix-blend-mode:screen; z-index:2;">
+  </div>
+  <div class="leadership__right">
+    <div class="leadership__right-header">
+      <div class="section-label">Who We Are</div>
+      <div class="section-title">Leadership</div>
+      <div class="gold-rule"></div>
+    </div>
+    <div class="leadership__cards">
+    <div class="bio-card">
+      <img src="images/anne-headshot.jpg" alt="Anne Lyons" class="bio__photo">
+      <div class="bio-card__body">
+        <div class="bio-card__header">
+          <div class="bio__name">Anne Lyons</div>
+          <div class="bio__role">Founder &amp; CEO</div>
+        </div>
+        <p class="bio__text">A senior authority in the stewardship of complex lifestyle assets. Prior to founding Tapestry, Anne represented the global personal asset portfolio of Paul G. Allen at Vulcan Inc.&mdash;overseeing residential, aviation, and maritime programs including the build and launch of <em>MY Octopus</em> and refits of <em>MY Tatoosh</em> and <em>MY Meduse</em>. She brings a rare combination of design intelligence, financial discipline, and operational judgment to this uniquely discerning space.</p>
+      </div>
+    </div>
+    <div class="bio-card">
+      <img src="images/kevin-j-headshot.jpg" alt="Kevin Johnson" class="bio__photo">
+      <div class="bio-card__body">
+        <div class="bio-card__header">
+          <div class="bio__name">Kevin Johnson</div>
+          <div class="bio__role">Managing Director</div>
+        </div>
+        <p class="bio__text">Began his career as a superyacht captain, building deep systems fluency and operational rigor through firsthand vessel operation, commissioning, and global cruising. He advanced into senior leadership as Fleet Captain for technology founders and Director of Residence for venture capital principals. At Tapestry, Kevin applies lifecycle oversight, governance, and risk management across all classes of exceptional assets.</p>
+      </div>
+    </div>
+    <div class="bio-card">
+      <img src="images/kevin-o-headshot.jpg" alt="Kevin O'Conor" class="bio__photo">
+      <div class="bio-card__body">
+        <div class="bio-card__header">
+          <div class="bio__name">Kevin O'Conor</div>
+          <div class="bio__role">Program Director</div>
+        </div>
+        <p class="bio__text">A former superyacht captain and engineer on sail and motor yachts up to 90 meters with extensive new-build and refit experience from premier Northern European yards worldwide. As Founder and CEO of Berth One Palm Beach, he transformed a commercial port into a high-performing superyacht marina serving vessels up to 162 meters&mdash;guiding regulatory approvals and refit operations before executing the sale to Safe Harbor Marinas, now owned by Blackstone.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="page-foot" style="left: 38%; right: 0;">Proprietary & Confidential &copy; Tapestry 2026</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE 5: OUR PROJECTS
+     ═══════════════════════════════════════════════════════ -->
+<div class="page projects">
+  <img src="images/icon.jpg" alt="" class="projects__icon">
+  <div class="projects__header">
+    <div class="section-label">Global Experience</div>
+    <div class="section-title">Our Projects</div>
+    <div class="gold-rule"></div>
+    <p class="projects__desc">Direct experience delivering complex new-build and refit programs at the world's leading shipyards across Northern Europe, the United States, Asia, and the South Pacific.</p>
+  </div>
+
+  <div class="projects__graphic">
+    <div class="projects__map-bg"></div>
+
+    <!-- SVG arc line connecting regions across the globe -->
+    <svg class="projects__arc" viewBox="0 0 1000 500" preserveAspectRatio="none">
+      <!-- Great circle arc from US West Coast through Europe to Asia/Pacific -->
+      <path d="M 100,240 C 200,120 350,80 480,100 C 580,115 620,110 680,130 C 780,160 880,250 950,360"
+            fill="none" stroke="#C8985A" stroke-width="1.2" stroke-opacity="0.4"/>
+      <!-- Connector lines from arc to clusters -->
+      <!-- US West (Westport/Delta) -->
+      <line x1="110" y1="235" x2="60" y2="280" stroke="#C8985A" stroke-width="0.6" stroke-opacity="0.35"/>
+      <!-- US South (Safe Harbor / Berth One) -->
+      <line x1="180" y1="185" x2="220" y2="340" stroke="#C8985A" stroke-width="0.6" stroke-opacity="0.35"/>
+      <!-- Netherlands cluster -->
+      <line x1="480" y1="100" x2="410" y2="140" stroke="#C8985A" stroke-width="0.6" stroke-opacity="0.35"/>
+      <!-- Germany / Scandinavia -->
+      <line x1="520" y1="105" x2="590" y2="140" stroke="#C8985A" stroke-width="0.6" stroke-opacity="0.35"/>
+      <!-- Mediterranean -->
+      <line x1="500" y1="110" x2="460" y2="310" stroke="#C8985A" stroke-width="0.6" stroke-opacity="0.35"/>
+      <!-- Asia -->
+      <line x1="870" y1="240" x2="880" y2="280" stroke="#C8985A" stroke-width="0.6" stroke-opacity="0.35"/>
+      <!-- South Pacific -->
+      <line x1="930" y1="330" x2="910" y2="380" stroke="#C8985A" stroke-width="0.6" stroke-opacity="0.35"/>
+      <!-- Dots at connection points -->
+      <circle cx="110" cy="235" r="2.5" fill="#C8985A" opacity="0.6"/>
+      <circle cx="180" cy="185" r="2.5" fill="#C8985A" opacity="0.6"/>
+      <circle cx="480" cy="100" r="2.5" fill="#C8985A" opacity="0.6"/>
+      <circle cx="520" cy="105" r="2.5" fill="#C8985A" opacity="0.6"/>
+      <circle cx="500" cy="110" r="2.5" fill="#C8985A" opacity="0.6"/>
+      <circle cx="870" cy="240" r="2.5" fill="#C8985A" opacity="0.6"/>
+      <circle cx="930" cy="330" r="2.5" fill="#C8985A" opacity="0.6"/>
+    </svg>
+
+    <!-- NETHERLANDS — top center-left, over Northern Europe -->
+    <div class="yard-cluster" style="top: 14%; left: 33%;">
+      <div class="yard-cluster__name">Netherlands</div>
+      <div class="yard-cluster__yard">Amels</div>
+      <div class="yard-cluster__yard">Damen</div>
+      <div class="yard-cluster__yard">Feadship</div>
+      <div class="yard-cluster__yard">Heesen</div>
+      <div class="yard-cluster__yard">Icon</div>
+      <div class="yard-cluster__yard">Oceanco</div>
+      <div class="yard-cluster__yard">Vitters</div>
+    </div>
+
+    <!-- GERMANY & SCANDINAVIA — top center-right -->
+    <div class="yard-cluster" style="top: 14%; left: 54%;">
+      <div class="yard-cluster__name">L&uuml;rssen</div>
+      <div class="yard-cluster__yard" style="font-weight:500; color:var(--navy); font-size:8.5px;">Germany</div>
+    </div>
+    <div class="yard-cluster" style="top: 30%; left: 55%;">
+      <div class="yard-cluster__name">Scandinavia</div>
+      <div class="yard-cluster__yard">Nautor's Swan</div>
+      <div class="yard-cluster__yard">Baltic Yachts</div>
+    </div>
+
+    <!-- US WEST COAST — left side -->
+    <div class="yard-cluster" style="top: 46%; left: 2%;">
+      <div class="yard-cluster__name">US West Coast</div>
+      <div class="yard-cluster__yard">Westport</div>
+      <div class="yard-cluster__yard">Delta</div>
+    </div>
+
+    <!-- US SOUTHEAST — center-left lower -->
+    <div class="yard-cluster" style="top: 62%; left: 16%;">
+      <div class="yard-cluster__name">US Southeast</div>
+      <div class="yard-cluster__yard">Safe Harbor</div>
+      <div class="yard-cluster__yard">Berth One Palm Beach</div>
+    </div>
+
+    <!-- MEDITERRANEAN — center lower -->
+    <div class="yard-cluster" style="top: 56%; left: 38%;">
+      <div class="yard-cluster__name">Mediterranean</div>
+      <div class="yard-cluster__yard">Benetti</div>
+      <div class="yard-cluster__yard">Rossinavi</div>
+      <div class="yard-cluster__yard">MB92</div>
+      <div class="yard-cluster__yard">Freire Shipyard</div>
+    </div>
+
+    <!-- ASIA — right side -->
+    <div class="yard-cluster" style="top: 46%; left: 82%;">
+      <div class="yard-cluster__name">Asia</div>
+      <div class="yard-cluster__yard">Marsun</div>
+      <div class="yard-cluster__yard">Horizon</div>
+    </div>
+
+    <!-- SOUTH PACIFIC — bottom right -->
+    <div class="yard-cluster" style="top: 72%; left: 84%;">
+      <div class="yard-cluster__name">South Pacific</div>
+      <div class="yard-cluster__yard">Orams Marine</div>
+      <div class="yard-cluster__yard">Silver Yachts</div>
+    </div>
+  </div>
+
+  <div class="projects__scale">
+    <div class="scale__bar">
+      <div class="scale__segment scale__segment--sm">
+        <div class="scale__size">30m+</div>
+        <div class="scale__detail">5 Projects<br><span style="font-size:7px;">*20+ projects &lt;30m</span></div>
+      </div>
+      <div class="scale__segment scale__segment--md">
+        <div class="scale__size">50m+</div>
+        <div class="scale__detail">3 Projects</div>
+      </div>
+      <div class="scale__segment scale__segment--lg">
+        <div class="scale__size">90m+</div>
+        <div class="scale__detail">6 Projects<br><span style="font-size:7px;">*1 underway</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-foot">Proprietary & Confidential &copy; Tapestry 2026</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE 6: NEXT STEPS
+     ═══════════════════════════════════════════════════════ -->
+<div class="page close">
+  <div class="close__image">
+    <img src="images/yacht-sea.jpg" alt="Yacht at sea">
+  </div>
+  <div class="close__content">
+    <div class="close__label">Get in Touch</div>
+    <div class="close__heading">Next Steps</div>
+    <div class="close__rule"></div>
+    <p class="close__text">For additional information or to explore Tapestry's<br>Yacht Owner Representation & Advisory, please contact us at</p>
+    <a href="mailto:yachts@tallc.com" class="close__email">yachts@tallc.com</a>
+    <p class="close__subtext">A comprehensive Program Overview and tailored engagement<br>proposals are available upon request.</p>
+    <img src="images/logo-white.png" alt="Tapestry Associates" class="close__logo">
+  </div>
+  <div class="page-foot page-foot--light" style="z-index:2;">Proprietary & Confidential &copy; Tapestry 2026</div>
+</div>
+
+</body>
+</html>
