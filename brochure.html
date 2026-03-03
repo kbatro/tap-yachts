@@ -480,16 +480,17 @@
      Geographic map layout with positioned shipyard clusters
      ═══════════════════════════════════════════════════════ */
   .projects {
-    background: var(--off-white);
     position: relative;
     display: flex;
     flex-direction: column;
+    background: var(--off-white);
   }
 
   .projects__header {
-    padding: 44px 56px 0;
+    padding: 44px 56px 20px;
     position: relative;
     z-index: 2;
+    background: var(--off-white);
   }
 
   .projects__header .section-label {
@@ -520,10 +521,18 @@
     z-index: 2;
   }
 
-  .projects__graphic {
+  .projects__map-band {
+    background: white;
     flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .projects__graphic {
     position: relative;
     margin: 0 40px;
+    width: calc(100% - 80px);
   }
 
   .projects__map-bg {
@@ -580,9 +589,10 @@
   }
 
   .projects__scale {
-    padding: 0 56px 48px;
+    padding: 20px 56px 48px;
     position: relative;
     z-index: 2;
+    background: var(--off-white);
   }
 
   .scale__bar {
@@ -893,8 +903,10 @@
     <p class="projects__desc">Direct experience delivering complex new-build and refit programs at the world's leading shipyards across Northern Europe, the United States, Asia, and the South Pacific.</p>
   </div>
 
-  <div class="projects__graphic">
-    <img src="images/projects-map-full.png" alt="Global shipyard map" style="width:100%; height:auto; display:block;">
+  <div class="projects__map-band">
+    <div class="projects__graphic">
+      <img src="images/projects-map-full.png" alt="Global shipyard map" style="width:100%; height:auto; display:block;">
+    </div>
   </div>
 
   <div class="projects__scale">
