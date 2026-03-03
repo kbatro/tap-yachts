@@ -243,7 +243,8 @@
   .intro__text .section-title--sub {
     font-family: var(--serif);
     font-weight: 300;
-    font-size: clamp(24px, 3vw, 34px);
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.15;
     color: var(--navy);
     margin-top: 40px;
     margin-bottom: 18px;
@@ -283,8 +284,9 @@
   .framework__image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center 45%;
+    object-fit: contain;
+    object-position: center center;
+    background: var(--navy);
   }
 
   .framework .section-label { color: rgba(255,255,255,0.4); }
@@ -604,13 +606,13 @@
   .close__subtext {
     font-family: var(--sans);
     font-weight: 300;
-    font-size: 13px;
-    line-height: 1.6;
-    color: rgba(255,255,255,0.45);
+    font-size: 15px;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.75);
     margin-bottom: 40px;
   }
 
-  .close__logo { height: 36px; opacity: 0.8; }
+  .close__logo { height: 56px; opacity: 0.8; }
 
   /* ── FOOTER ── */
   .footer {
@@ -775,8 +777,8 @@
     .close__heading { font-size: 36px; }
     .close__text { font-size: 14px; }
     .close__email { font-size: 18px; }
-    .close__subtext { font-size: 12px; }
-    .close__logo { height: 28px; }
+    .close__subtext { font-size: 14px; }
+    .close__logo { height: 44px; }
   }
 
   /* ── MOBILE PROJECTS FALLBACK ── */
@@ -847,13 +849,13 @@
         <div class="section-label">Yacht Owner Representation</div>
         <div class="section-title">Clarity Before<br>Commitment</div>
         <div class="gold-rule"></div>
-        <p class="body-text">Since 2010, Tapestry has served Owners of significant wealth in the creation and oversight of some of the world's most complex tangible assets&mdash;on land and at sea.</p>
-        <p class="body-text">We operate outside of transactional incentives. As independent advocates for the Owner, we test assumptions, surface risks, and articulate trade-offs&mdash;so decisions are informed, not pressured.</p>
+        <p class="body-text">Since 2010, Tapestry has served Owners of significant wealth in the creation and oversight of some of the world's most complex tangible assets, on land and at sea.</p>
+        <p class="body-text">We operate outside of transactional incentives. As independent advocates for the Owner, we test assumptions, surface risks, and articulate trade-offs, so decisions are informed, not pressured.</p>
         <p class="body-text">We provide a confidential, judgment-free environment where Owners explore every dimension of a complex asset: culture, lifestyle, operations, finance, tax, insurance, and liability.</p>
         <div class="section-title--sub">Pivotal Work at<br>Moments of Transition</div>
         <div class="gold-rule"></div>
-        <p class="body-text">Before acquisition, during changes in scale, or when reshaping a program, we clarify the Owner's objectives early&mdash;preventing misalignment and ensuring they are fully informed before committing capital.</p>
-        <p class="body-text">This positions our representation to protect capital, time, and attention&mdash;so the Owner remains focused on realizing their invested Enjoyment Capital<sup class="sm">&copy;</sup> over the life of the asset.</p>
+        <p class="body-text">Before acquisition, during changes in scale, or when reshaping a program, we clarify the Owner's objectives early, preventing misalignment and ensuring they are fully informed before committing capital.</p>
+        <p class="body-text">This positions our representation to protect capital, time, and attention, so the Owner remains focused on realizing their invested Enjoyment Capital<sup class="sm">&copy;</sup> over the life of the asset.</p>
       </div>
       <div class="intro__image">
         <img src="images/marina.jpg" alt="Superyacht marina">
@@ -894,7 +896,6 @@
     <div class="leadership__grid">
       <div class="leadership__image">
         <img src="images/leadership.jpg" alt="Yacht detail">
-        <img src="images/icon.jpg" alt="" class="leadership__image-icon">
       </div>
       <div>
         <div class="section-label">Who We Are</div>
@@ -1074,7 +1075,6 @@
     <img src="images/yacht-sea.jpg" alt="Yacht at sea">
   </div>
   <div class="close__content">
-    <div class="close__label">Get in Touch</div>
     <div class="close__heading">Next Steps</div>
     <div class="close__rule"></div>
     <p class="close__text">For additional information or to explore Tapestry's<br>Yacht Owner Representation &amp; Advisory, please contact us at</p>
