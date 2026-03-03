@@ -407,26 +407,42 @@
 
   /* ── PROJECTS ── */
   .projects {
-    padding: 100px 0 80px;
-    background: var(--off-white);
-    border-top: 1px solid rgba(200,152,90,0.15);
+    padding: 0;
+    background: var(--navy);
   }
+
+  .projects__header {
+    padding: 100px 0 48px;
+    background: var(--navy);
+  }
+
+  .projects__header .section-label { color: rgba(255,255,255,0.4); }
+  .projects__header .section-title { color: white; }
 
   .projects__desc {
     font-family: var(--sans);
     font-weight: 300;
     font-size: 15px;
     line-height: 1.75;
-    color: var(--text-mid);
+    color: rgba(255,255,255,0.65);
     max-width: 680px;
-    margin-bottom: 48px;
+    margin-bottom: 0;
+  }
+
+  .projects__map-band {
+    background: white;
+    padding: 40px 0;
   }
 
   .projects__graphic {
     position: relative;
     width: 100%;
-    aspect-ratio: 2/1;
-    margin-bottom: 48px;
+    margin-bottom: 0;
+  }
+
+  .projects__footer {
+    padding: 48px 0 80px;
+    background: var(--navy);
   }
 
   .projects__map-bg {
@@ -485,9 +501,9 @@
     padding: 0 24px;
   }
 
-  .scale__segment--sm { background: rgba(14,30,48,0.06); flex: 3; }
-  .scale__segment--md { background: rgba(14,30,48,0.12); flex: 2; }
-  .scale__segment--lg { background: var(--navy); flex: 3; }
+  .scale__segment--sm { background: rgba(255,255,255,0.08); flex: 3; }
+  .scale__segment--md { background: rgba(255,255,255,0.14); flex: 2; }
+  .scale__segment--lg { background: rgba(255,255,255,0.22); flex: 3; }
 
   .scale__size {
     font-family: var(--sans);
@@ -496,7 +512,7 @@
   }
 
   .scale__segment--sm .scale__size,
-  .scale__segment--md .scale__size { color: var(--navy); }
+  .scale__segment--md .scale__size { color: rgba(255,255,255,0.9); }
   .scale__segment--lg .scale__size { color: var(--gold); }
 
   .scale__detail {
@@ -507,7 +523,7 @@
   }
 
   .scale__segment--sm .scale__detail,
-  .scale__segment--md .scale__detail { color: var(--text-mid); }
+  .scale__segment--md .scale__detail { color: rgba(255,255,255,0.6); }
   .scale__segment--lg .scale__detail { color: rgba(255,255,255,0.7); }
 
   /* ── CONTACT / CLOSE ── */
@@ -935,15 +951,25 @@
 
 <!-- ── PROJECTS ── -->
 <section class="projects" id="projects">
-  <div class="wrap">
-    <div class="section-label">Global Experience</div>
-    <div class="section-title">Our Projects</div>
-    <div class="gold-rule"></div>
-    <p class="projects__desc">Direct experience delivering complex new-build and refit programs at the world's leading shipyards across Northern Europe, the United States, Asia, and the South Pacific.</p>
-
-    <div class="projects__graphic">
-      <img src="images/projects-map-full.png" alt="Global shipyard map" style="width:100%; height:auto; display:block;">
+  <div class="projects__header">
+    <div class="wrap">
+      <div class="section-label">Global Experience</div>
+      <div class="section-title">Our Projects</div>
+      <div class="gold-rule"></div>
+      <p class="projects__desc">Direct experience delivering complex new-build and refit programs at the world's leading shipyards across Northern Europe, the United States, Asia, and the South Pacific.</p>
     </div>
+  </div>
+
+  <div class="projects__map-band">
+    <div class="wrap">
+      <div class="projects__graphic">
+        <img src="images/projects-map-full.png" alt="Global shipyard map" style="width:100%; height:auto; display:block;">
+      </div>
+    </div>
+  </div>
+
+  <div class="projects__footer">
+    <div class="wrap">
 
     <div class="projects__regions-mobile">
       <div>
@@ -1001,6 +1027,7 @@
         <div class="scale__size">90m+</div>
         <div class="scale__detail">6 Projects<br><span style="font-size:9px;">*1 underway</span></div>
       </div>
+    </div>
     </div>
   </div>
 </section>
