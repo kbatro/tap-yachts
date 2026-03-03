@@ -831,7 +831,10 @@
 <!-- ── HERO ── -->
 <section class="hero" id="home">
   <div class="hero__bg">
-    <img src="images/hero-aerial.jpg" alt="Superyacht aerial">
+    <picture>
+      <source media="(max-width: 600px)" srcset="images/hero-aerial-vertical.jpg">
+      <img src="images/hero-aerial.jpg" alt="Superyacht aerial">
+    </picture>
   </div>
   <div class="hero__content">
     <div class="hero__title">Owner<br>Representation</div>
