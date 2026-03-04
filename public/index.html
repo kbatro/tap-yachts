@@ -709,9 +709,7 @@
     .site-nav__links a:not(.site-nav__cta) { display: none; }
     .site-nav { padding: 0 28px; }
 
-    /* Projects map doesn't work well on tablet — switch to list */
-    .projects__graphic { display: none; }
-    .projects__regions-mobile { display: grid; }
+    /* Projects map scales fine as image on tablet */
 
     .scale__bar { height: 48px; }
   }
@@ -769,10 +767,9 @@
     .bio__text { font-size: 12px; text-align: left; }
 
     /* Projects */
-    .projects { padding: 56px 0 60px; }
-    .projects__desc { font-size: 14px; margin-bottom: 32px; }
-    .projects__graphic { display: none; }
-    .projects__regions-mobile { display: grid; }
+    .projects__desc { font-size: 14px; }
+    .projects__header { padding: 56px 0 32px; }
+    .projects__footer { padding: 32px 0 56px; }
 
     .scale__bar { flex-direction: column; height: auto; }
     .scale__segment {
